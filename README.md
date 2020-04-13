@@ -5,4 +5,5 @@ Microblog created in Flask using the Miguel Grinberg classes at: https://blog.mi
 Microblog created using Miguel Grinberg Classes about Flask
 
 https://blog.miguelgrinberg.com/post/
+
 https://github.com/miguelgrinberg/microblog
