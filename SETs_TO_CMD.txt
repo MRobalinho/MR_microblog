@@ -1,4 +1,0 @@
-REM --------------------
-CMD
-SET SQLALCHEMY_DATABASE_URI=C:\Users\manuel.robalinho\Google Drive\Trab_Academicos\FLASK\microblog\app.db
-SET DATABASE_URL=sqlite:///C:\Users\manuel.robalinho\Google Drive\Trab_Academicos\FLASK\microblog\app.db
