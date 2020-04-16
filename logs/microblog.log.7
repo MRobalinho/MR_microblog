@@ -1,0 +1,82 @@
+2020-04-11 13:35:29,118 ERROR: Exception on /index [GET] [in c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\manuel.robalinho\Google Drive\Trab_Academicos\FLASK\microblog\app\routes.py", line 30, in index
+    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3246, in all
+    return list(self)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 101, in instances
+    cursor.close()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 69, in __exit__
+    exc_value, with_traceback=exc_tb,
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 81, in instances
+    rows = [proc(row) for row in fetch]
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 81, in <listcomp>
+    rows = [proc(row) for row in fetch]
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 589, in _instance
+    populators,
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 726, in _populate_full
+    dict_[key] = getter(row)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\engine\result.py", line 107, in __getitem__
+    return processor(self._row[index])
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\processors.py", line 46, in process
+    "'%s'" % (type_.__name__, value)
+ValueError: Couldn't parse datetime string: ''
+2020-04-11 13:35:29,847 ERROR: Exception on /explore [GET] [in c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "C:\Users\manuel.robalinho\Google Drive\Trab_Academicos\FLASK\microblog\app\routes.py", line 45, in explore
+    page, app.config['POSTS_PER_PAGE'], False)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\flask_sqlalchemy\__init__.py", line 496, in paginate
+    items = self.limit(per_page).offset((page - 1) * per_page).all()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\query.py", line 3246, in all
+    return list(self)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 101, in instances
+    cursor.close()
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\util\langhelpers.py", line 69, in __exit__
+    exc_value, with_traceback=exc_tb,
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\util\compat.py", line 178, in raise_
+    raise exception
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 81, in instances
+    rows = [proc(row) for row in fetch]
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 81, in <listcomp>
+    rows = [proc(row) for row in fetch]
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 589, in _instance
+    populators,
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\orm\loading.py", line 726, in _populate_full
+    dict_[key] = getter(row)
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\engine\result.py", line 107, in __getitem__
+    return processor(self._row[index])
+  File "c:\users\manuel.robalinho\appdata\local\programs\python\python37-32\lib\site-packages\sqlalchemy\processors.py", line 46, in process
+    "'%s'" % (type_.__name__, value)
+ValueError: Couldn't parse datetime string: ''
