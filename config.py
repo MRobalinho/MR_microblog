@@ -24,7 +24,6 @@ class Config(object):
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     POSTS_PER_PAGE = 25
     LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
-	
     print('----- Config --------')
     print('SECRET_KEY :', SECRET_KEY)
     print('SQLALCHEMY_DATABASE_URI :', SQLALCHEMY_DATABASE_URI)
@@ -40,9 +39,7 @@ class Config(object):
     print('ELASTICSEARCH_URL :', ELASTICSEARCH_URL)    
     print('POSTS_PER_PAGE :', POSTS_PER_PAGE)
     print('LOG_TO_STDOUT :', PLOG_TO_STDOUT)
-	
     print('----Finish load Config --------')
-	
 	# Email for real scneario
 	#-- for a real email using gmail ----
 	#SET MAIL_SERVER=smtp.googlemail.com
