@@ -1,17 +1,18 @@
+# Secret key configuration
+
 import os
 from dotenv import load_dotenv
 
-print('load MICROBLOG.ENV  file:' , basedir)
 basedir = os.path.abspath(os.path.dirname(__file__))
+print('load MICROBLOG.ENV  file:' , basedir)
 load_dotenv(os.path.join(basedir, 'microblog.env'))
 
-
 class Config(object):
+    print('Read Config ...' )
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
     SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
         'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
     MAIL_SERVER = os.environ.get('MAIL_SERVER')
     MAIL_PORT = int(os.environ.get('MAIL_PORT') or 25)
     MAIL_USE_TLS = os.environ.get('MAIL_USE_TLS') is not None
@@ -22,8 +23,9 @@ class Config(object):
     MS_TRANSLATOR_KEY = os.environ.get('MS_TRANSLATOR_KEY')
     ELASTICSEARCH_URL = os.environ.get('ELASTICSEARCH_URL')
     POSTS_PER_PAGE = 25
+    LOG_TO_STDOUT = os.environ.get('LOG_TO_STDOUT')
 	
-	print('----- Config --------')
+    print('----- Config --------')
     print('SECRET_KEY :', SECRET_KEY)
     print('SQLALCHEMY_DATABASE_URI :', SQLALCHEMY_DATABASE_URI)
     print('SQLALCHEMY_TRACK_MODIFICATIONS :', SQLALCHEMY_TRACK_MODIFICATIONS)
@@ -40,3 +42,11 @@ class Config(object):
     print('LOG_TO_STDOUT :', PLOG_TO_STDOUT)
 	
     print('----Finish load Config --------')
+	
+	# Email for real scneario
+	#-- for a real email using gmail ----
+	#SET MAIL_SERVER=smtp.googlemail.com
+	#SET MAIL_PORT=587
+	#SET MAIL_USE_TLS=1
+	#SET MAIL_USERNAME=<manuel.robalinho@gmail.com>
+	#SET MAIL_PASSWORD=<romagma20201>
