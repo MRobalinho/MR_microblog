@@ -28,7 +28,7 @@ guess-language-spirit==0.5.3
 guizero==0.6.4
 gunicorn==20.0.4
 idna==2.9
-imagecodecs==2019.2.18
+imagecodecs==2020.2.18
 itsdangerous==1.1.0
 Jinja2==2.11.1
 Mako==1.1.2
