@@ -38,7 +38,7 @@ class Config(object):
     print('MS_TRANSLATOR_KEY :', MS_TRANSLATOR_KEY)	
     print('ELASTICSEARCH_URL :', ELASTICSEARCH_URL)    
     print('POSTS_PER_PAGE :', POSTS_PER_PAGE)
-    print('LOG_TO_STDOUT :', PLOG_TO_STDOUT)
+    print('LOG_TO_STDOUT :', LOG_TO_STDOUT)
     print('----Finish load Config --------')
 	# Email for real scneario
 	#-- for a real email using gmail ----
