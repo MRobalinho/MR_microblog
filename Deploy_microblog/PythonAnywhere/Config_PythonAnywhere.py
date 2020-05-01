@@ -15,7 +15,7 @@ class Config(object):
     #--- Data Base
     SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
     username='Mrobalinho' ,
-    password='romapyt2020'    ,
+    password='normal'    ,
     hostname='localhost'  ,
     databasename='Mrobalinho$app')
 
