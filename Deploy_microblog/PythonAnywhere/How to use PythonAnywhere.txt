@@ -1,0 +1,177 @@
+How to use PythonAnywhere
+------------------------------------------
+https://pythonhow.com/how-to-use-pythonanywhere/
+
+Forums
+https://www.pythonanywhere.com/forums/
+------------------------------------------
+Create a new directory: $ mkdir myproject
+List files				$ ls  (ou ls -l  to see at form list)
+                          ls -lh
+						  ls -a ( hidden files)
+						  ls -R  ( this directory and bellow)
+Change our current directory to myproject: $ cd directory
+Check to see where you are: $ pwd
+Create a Python file there, That will open the nano text editor where you can write your Python code: $ nano myscript.py
+$ python3 myscript.py
+And lastly you can install Python packages with pip3: $ pip3 install pandas --user
+And uninstall: $ pip3 uninstall pandas
+$ unzip
+$ clear
+$ rm   (delete file) if used with parameter -r  then delete all directory
+$ man ls  (help to ls command)
+$ tree  (directory tree)
+$ printenv     (print set system variable)
+--------------------------------
+Deploy a Flask web app on PythonAnywhere
+https://pythonhow.com/deploy-flask-web-app-pythonanywhere/
+
+4. In the Code section of the Web menu page click on Go to Directory next to Source Code.
+
+    5. Delete the flask_app.py file.
+
+    6. In your local computer rename your main Python file to flask_app.py. PythonAnywhere will be 
+	looking for such a file name.
+
+7. Use the Upload a file button to upload your own flask_app.py Python file.
+
+8. If you have html, css and other project files, you can create a templates and a static directory 
+	in the Directories section and upload your files there.
+
+pip3.6 install --user elasticsearch
+
+Creating a virtualenv
+https://help.pythonanywhere.com/pages/Virtualenvs/
+
+$ mkvirtualenv myvirtualenv --python=/usr/bin/python3.6
+$ workon myvirtualenv
+(myvirtualenv) $ which python
+(myvirtualenv) $ deactivate
+
+Mrobalinho.mysql.pythonanywhere-services.com
+Mrobalinho$app
+
+export DATABASE_URL='postgres://<postgres-username>:<postgres-password>@<postgres-address>:<postgres-port>/<database-name>'
+# or
+export DATABASE_URL='mysql://<pythonanywhere-username>:<mysql-password>@<mysql-address>/<database-name>'
+# or
+export DATABASE_URL='sqlite:////home/yourusername/path/to/db.sqlite'
+
+Use these settings in your web applications.
+
+Database host address:Mrobalinho.mysql.pythonanywhere-services.com
+Username:Mrobalinho
+Your databases:
+Click a database's name to start a MySQL console logged in to it.
+
+Start a console on:Mrobalinho$app
+Start a console on:Mrobalinho$default
+mysql://<your_username>:<your_mysql_password>@<your_mysql_hostname>/<your_database_name>
+-----
+# MySQL configurations
+  app.config['MYSQL_DATABASE_USER'] = 'Mrobalinho'
+  app.config['MYSQL_DATABASE_PASSWORD'] = 'romapyt2020'
+  app.config['MYSQL_DATABASE_DB'] = 'Mrobalinho$app'
+  app.config['MYSQL_DATABASE_HOST'] = 'Mrobalinho.mysql.pythonanywhere-services.com'
+  mysql.init_app(app)
+----  
+from flask import Flask
+from flask.ext.sqlalchemy import SQLAlchemy
+
+app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://username:password@localhost/db_name'
+db = SQLAlchemy(app)
+-
+---
+import mysql
+
+conn = mysql.connect('Mrobalinho$app')
+print("Opened database successfully");
+
+cursor = conn.execute("SELECT id, username, email from USERS")
+for row in cursor:
+   print("ID = ", row[0])
+   print("USERNAME = ", row[1])
+   print("EMAIL = ", row[2], "\n")
+
+print("Operation done successfully");
+conn.close()
+--
+import mysql.connector
+
+conn = mysql.connector.connect(user='Mrobalinho', password='romapyt2020',host='127.0.0.1',database='Mrobalinho$app')
+
+cursor = conn.execute("SELECT id, username, email from USERS")
+for row in cursor:
+   print("ID = ", row[0])
+   print("USERNAME = ", row[1])
+   print("EMAIL = ", row[2], "\n")
+
+print("Operation done successfully");
+
+conn.close()
+--
+...add the following code to configure the database connection:
+https://blog.pythonanywhere.com/121/
+
+SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
+    username="the username from the 'Databases' tab",
+    password="the password you set on the 'Databases' tab",
+    hostname="the database host address from the 'Databases' tab",
+    databasename="the database name you chose, probably yourusername$comments",
+)
+app.config["SQLALCHEMY_DATABASE_URI"] = SQLALCHEMY_DATABASE_URI
+app.config["SQLALCHEMY_POOL_RECYCLE"] = 299
+app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
+
+Exemplo de conexão a funcionar:
+    #--- Data Base
+    SQLALCHEMY_DATABASE_URI = "mysql+mysqlconnector://{username}:{password}@{hostname}/{databasename}".format(
+    username='Mrobalinho' ,
+    password='romapyt2020'    ,
+    hostname='localhost'  ,
+    databasename='Mrobalinho$app')
+
+------------------------
+Database Migration
+Para resolver o erro na migração e update da base de dados erro: Target database is not up to date.
+Executar:
+$ flask db stamp head
+$ flask db migrate
+$ flask db upgrade
+
+mysql> SELECT * FROM alembic_version;
+o solve your problem simply use the command:
+
+DROP TABLE alembic_version;
+
+-----
+CHANGE DATABASE MYSQL
+mysql> delete * from user;
+
+mysql> describe user;
+
+mysql> show create table user;
+
+# change column that is a foreign_key
+mysql> SET foreign_key_checks = 0;
+mysql> alter table post change column id id int(11) NOT NULL AUTO_INCREMENT;
+mysql> SET foreign_key_checks = 1;
+
+
+O ELASTICSEARCH não é suportado pelo PythonAnyWhere. Assim retirei do .env o SET para o ELASTICSHEARCH:
+O microblog.env  instalado no PythonAnywhere ficou assim:
+
+DATABASE_URL=mysql://Mrobalinho:romapyt2020@Mrobalinho.mysql.pythonanywhere-services.com/Mrobalinho$app
+SECRET_KEY=a-really-long-and-unique-key-that-nobody-knows
+MAIL_SERVER=Mrobalinho.mysql.pythonanywhere-services.com
+MAIL_PORT=8025
+MS_TRANSLATOR_KEY=8fbc6240736c4ba7ad210bf8adcca198
+MAIL_USERNAME=manuel.robalinho@gmail.com
+MAIL_PASSWORD=fxsaglakxrxztqfc
+FLASK_DEBUG=0
+LOG_TO_STDOUT=1
+
+
+Site publicado em:
+http://mrobalinho.pythonanywhere.com/

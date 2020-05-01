@@ -1,0 +1,13 @@
+Heroku é uma plataforma em nuvem como um serviço que suporta várias linguagens de programação.
+Uma das primeiras plataformas em nuvem, o Heroku está em desenvolvimento desde junho de 2007, 
+quando suportava apenas a linguagem de programação Ruby, mas agora suporta Java, Node.js, Scala,
+ Clojure, Python, PHP e Go.
+
+https://dashboard.heroku.com/
+
+https://devcenter.heroku.com/categories/deploying-with-git
+
+https://medium.com/the-andela-way/deploying-a-python-flask-app-to-heroku-41250bda27d0
+
+Application running at:
+https://flask-microblog-mr.herokuapp.com/index
