@@ -7,3 +7,6 @@ Microblog created using Miguel Grinberg Classes about Flask
 https://blog.miguelgrinberg.com/post/
 
 https://github.com/miguelgrinberg/microblog
+
+Deploy:
+http://mrobalinho.pythonanywhere.com/auth/login?next=%2F
