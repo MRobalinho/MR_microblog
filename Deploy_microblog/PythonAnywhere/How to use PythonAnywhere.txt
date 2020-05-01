@@ -70,7 +70,7 @@ mysql://<your_username>:<your_mysql_password>@<your_mysql_hostname>/<your_databa
 -----
 # MySQL configurations
   app.config['MYSQL_DATABASE_USER'] = 'Mrobalinho'
-  app.config['MYSQL_DATABASE_PASSWORD'] = 'romapyt2020'
+  app.config['MYSQL_DATABASE_PASSWORD'] = 'normal'
   app.config['MYSQL_DATABASE_DB'] = 'Mrobalinho$app'
   app.config['MYSQL_DATABASE_HOST'] = 'Mrobalinho.mysql.pythonanywhere-services.com'
   mysql.init_app(app)
@@ -162,13 +162,13 @@ mysql> SET foreign_key_checks = 1;
 O ELASTICSEARCH não é suportado pelo PythonAnyWhere. Assim retirei do .env o SET para o ELASTICSHEARCH:
 O microblog.env  instalado no PythonAnywhere ficou assim:
 
-DATABASE_URL=mysql://Mrobalinho:romapyt2020@Mrobalinho.mysql.pythonanywhere-services.com/Mrobalinho$app
+DATABASE_URL=mysql://Mrobalinho:normal@Mrobalinho.mysql.pythonanywhere-services.com/Mrobalinho$app
 SECRET_KEY=a-really-long-and-unique-key-that-nobody-knows
 MAIL_SERVER=Mrobalinho.mysql.pythonanywhere-services.com
 MAIL_PORT=8025
-MS_TRANSLATOR_KEY=8fbc6240736c4ba7ad210bf8adcca198
+MS_TRANSLATOR_KEY=yyyyyyyyyyyyyyyyyyy
 MAIL_USERNAME=manuel.robalinho@gmail.com
-MAIL_PASSWORD=fxsaglakxrxztqfc
+MAIL_PASSWORD=zzzzzzzzzzzzzzzz
 FLASK_DEBUG=0
 LOG_TO_STDOUT=1
 
